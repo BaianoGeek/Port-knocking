@@ -4,7 +4,7 @@ Este é um script em Bash que pode ser usado para realizar a técnica de "Port K
 
 ## Descrição
 
-A técnica de "Port Knocking" envolve enviar uma sequência específica de pacotes para determinadas portas em um servidor, a fim de abrir uma porta que normalmente está fechada. Este script simplificado envia pacotes SYN para a porta 80 de uma série de endereços IP na rede local.
+A técnica de "Port Knocking" envolve enviar uma sequência específica de pacotes para determinadas portas em um servidor, a fim de abrir uma porta que normalmente está fechada. Este script simplificado envia pacotes SYN para uma série de portas de um endereço IP na rede local.
 
 ## Como Usar
 
@@ -27,9 +27,9 @@ chmod +x knock.sh
 
 - O script verifica se foi fornecido um argumento ao ser executado. Se nenhum argumento for fornecido, ele exibe uma mensagem de uso com informações sobre como usar o script.
 
-- Se um argumento for fornecido (o endereço IP inicial da rede), o script itera por todos os endereços IP baseados na lista insformado em um arquivo chamado lista na sub-rede especificada.
+- Se um argumento for fornecido (o endereço IP inicial da rede), o script itera por todas as portas do endereço IP baseado em um arquivo chamado lista na sub-rede especificada.
 
-- Para cada endereço IP na sub-rede, o script envia um único pacote SYN para a porta 80 usando o utilitário hping3.
+- Para cada porta especificado no arquivo lista, o script envia um único pacote SYN usando o utilitário hping3.
 
 - A saída do hping3 é redirecionada para /dev/null, suprimindo qualquer mensagem de saída.
 
